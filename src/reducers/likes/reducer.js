@@ -1,11 +1,11 @@
 const initialState = {
-  likes: [],
+  likes: {},
 };
-const likesReducer = (state = initialState, { type, paylaod }) => {
+const likesReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case "SET_LIKES":
       return {
-        likes: paylaod,
+        likes: payload,
       };
 
     default:
