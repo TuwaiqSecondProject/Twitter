@@ -4,7 +4,7 @@ function Trends() {
   return (
     <>
       <div className="trends-container">
-        <h3>Trends</h3>
+        <h2>Trends</h2>
         <div className="trends">
           <h3>Manchester United vs Manchester City</h3>
           <img src={img1} />
@@ -12,7 +12,7 @@ function Trends() {
 
         <div className="trends">
           <h3>#석진이_Yours_박박</h3>
-          <img git />
+          <img />
         </div>
 
         <div className="trends">
