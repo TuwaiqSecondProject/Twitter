@@ -9,11 +9,6 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         tweets: payload,
       };
 
-    case "REMOVE_VIDEO":
-      return {
-        tweets: [],
-      };
-
     default:
       return state;
   }

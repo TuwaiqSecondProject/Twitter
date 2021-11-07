@@ -1,5 +1,13 @@
+import {  useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setTweets } from "../reducers/Tweets/action";
+import { setUsers } from "../reducers/Users/action";
+import { setLikes } from "../reducers/likes/action";
 import Tweet from "./Tweet";
+
 function Timeline() {
+  const dispatch = useDispatch();
+
   const Tweets = [
     {
       Content: "hello world",
@@ -56,11 +64,91 @@ function Timeline() {
       numberOfLikes: 4562,
     },
   ];
-  console.log(Tweets);
+
+  const users = [
+    { 
+      username: "Ahmed",
+      img:"",
+      userPassword: "123456",
+      userId: 2 },
+    { 
+      username: "Noura",
+      img:"",
+      userPassword: "654321",
+      userId: 1 
+    },
+    { 
+      username: "Fahad",
+      img:"",
+      userPassword: "654320",
+      userId: 3 
+    },
+    { 
+      username: "Amal",
+      img:"",
+      userPassword: "653320",
+      userId: 4
+    },
+    { 
+      username: "Rema",
+      img:"",
+      userPassword: "553320",
+      userId: 5
+    },
+  ];
+
+  const Likes=
+[
+  {
+    1:[1,2],
+
+  },
+  {
+    3:[1,2,3],
+
+  },
+  
+]
+
+  const i=1;
+  console.log("Likes"+Likes)
+
+  useEffect(() => {
+    // Set tweets
+    const action = setTweets(Tweets);
+    dispatch(action);
+
+    // Set users
+    const action2 = setUsers(users);
+    dispatch(action2);
+
+    // Set Likes
+    const action3 = setLikes(Likes);
+    dispatch(action3);
+
+  },[]);
+
+  
+  
+
+  const state = useSelector((state) => {
+    console.log(state)
+    
+    return {
+      tweets: state.tweetsReducer.tweets,
+      user:state.usersReducer.Users,
+      likes:state.likesReducer.likes,
+    }; 
+  });
+
+
+
   return (
     <>
-      {Tweets.map((element) => {
+    
+      {state.tweets.map((element) => {
         return (
+          
           <Tweet
             UserId={element.UserId}
             Content={element.Content}

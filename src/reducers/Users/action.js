@@ -1,3 +1,5 @@
-export const setTweets = (tweets) => {
-  return { type: "SET_VIDEOS", payload: tweets };
+export const setUsers = (users) => {
+  return { 
+    type: "SET_USERS", 
+    payload: users };
 };

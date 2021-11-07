@@ -1,3 +1,5 @@
 export const setTweets = (tweets) => {
-  return { type: "SET_VIDEOS", payload: tweets };
+  return { 
+    type: "SET_TWEETS", 
+    payload: tweets };
 };
