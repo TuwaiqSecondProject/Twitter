@@ -31,7 +31,7 @@ export const Tweets = [
   },
   {
     Content: "𝐁𝐈𝐆 𝐁𝐄𝐍𝐙 ",
-    img: "",
+    // img: "",
     UserId: 3,
     tweetID: 5,
     date: "1/novmber",
@@ -55,7 +55,53 @@ export const Tweets = [
   },
 ];
 
+
+
+
 export const users = [
-  { username: "Twitter", userPassword: "123456", userId: 2 },
-  { username: "Twitter", userPassword: "123456", userId: 1 },
+  { 
+    username: "Ahmed",
+    img:"",
+    userPassword: "123456",
+    userId: 2 },
+  { 
+    username: "Noura",
+    img:"",
+    userPassword: "654321",
+    userId: 1 
+  },
+  { 
+    username: "Fahad",
+    img:"",
+    userPassword: "654320",
+    userId: 3 
+  },
+  { 
+    username: "Amal",
+    img:"",
+    userPassword: "653320",
+    userId: 4
+  },
+  { 
+    username: "Rema",
+    img:"",
+    userPassword: "553320",
+    userId: 5
+  },
 ];
+
+
+
+// The key is userID ,, the Array is TweetsID
+export const Likes=
+[
+  {
+    1:[1,2]
+  },
+  {
+    3:[1,2,3]
+  },
+  {
+    4:[6,4,3,1,2]
+  } 
+]

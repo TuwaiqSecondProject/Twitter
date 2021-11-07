@@ -3,9 +3,9 @@ const initialState = {
 };
 const likesReducer = (state = initialState, { type, paylaod }) => {
   switch (type) {
-    case "Add_TWEET_TO_LIKES":
+    case "SET_LIKES":
       return {
-        likes: state.likes.push(paylaod),
+        likes: paylaod,
       };
 
     default:
