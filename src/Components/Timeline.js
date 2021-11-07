@@ -1,4 +1,4 @@
-import {  useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setTweets } from "../reducers/Tweets/action";
 import { setUsers } from "../reducers/Users/action";
@@ -8,7 +8,7 @@ import Tweet from "./Tweet";
 function Timeline() {
   const dispatch = useDispatch();
 
-  const Tweets = [
+  const tweets = [
     {
       Content: "hello world",
       UserId: 1,
@@ -66,56 +66,46 @@ function Timeline() {
   ];
 
   const users = [
-    { 
+    {
       username: "Ahmed",
-      img:"",
+      img: "",
       userPassword: "123456",
-      userId: 2 },
-    { 
+      userId: 2
+    },
+    {
       username: "Noura",
-      img:"",
+      img: "",
       userPassword: "654321",
-      userId: 1 
+      userId: 1
     },
-    { 
+    {
       username: "Fahad",
-      img:"",
+      img: "",
       userPassword: "654320",
-      userId: 3 
+      userId: 3
     },
-    { 
+    {
       username: "Amal",
-      img:"",
+      img: "",
       userPassword: "653320",
       userId: 4
     },
-    { 
+    {
       username: "Rema",
-      img:"",
+      img: "",
       userPassword: "553320",
       userId: 5
     },
   ];
 
-  const Likes=
-[
-  {
-    1:[1,2],
-
-  },
-  {
-    3:[1,2,3],
-
-  },
-  
-]
-
-  const i=1;
-  console.log("Likes"+Likes)
+  const likes = {
+    user_1: [1, 2],
+    user_3: [1, 2, 3],
+  }
 
   useEffect(() => {
     // Set tweets
-    const action = setTweets(Tweets);
+    const action = setTweets(tweets);
     dispatch(action);
 
     // Set users
@@ -123,32 +113,32 @@ function Timeline() {
     dispatch(action2);
 
     // Set Likes
-    const action3 = setLikes(Likes);
+    const action3 = setLikes(likes);
     dispatch(action3);
 
-  },[]);
+  }, []);
 
-  
-  
+
+
 
   const state = useSelector((state) => {
     console.log(state)
-    
+
     return {
       tweets: state.tweetsReducer.tweets,
-      user:state.usersReducer.Users,
-      likes:state.likesReducer.likes,
-    }; 
+      user: state.usersReducer.Users,
+      likes: state.likesReducer.likes,
+    };
   });
 
 
 
   return (
     <>
-    
+
       {state.tweets.map((element) => {
         return (
-          
+
           <Tweet
             UserId={element.UserId}
             Content={element.Content}

@@ -1,8 +1,6 @@
-export const setLikes = (Like) => {
-  const i=1;
-console.log("in action :"+Like)
+export const setLikes = (Likes) => {
   return { 
     type: "SET_LIKES", 
-    payload: Like,
+    payload: Likes,
   };
 };
