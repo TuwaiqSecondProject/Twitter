@@ -1,28 +1,13 @@
-import { useHistory } from "react-router";
-import { useDispatch } from "react-redux";
-import logo from "./YouTube-Logo-PNG7.png";
-import home from "./home.png";
-
-import {changeTheme} from '../reducers/themes/action'
-import { useContext } from "react";
-import { UserContext } from "../App";
-
 function Navigation() {
-  const history =useHistory()
-  const theme = useContext(UserContext)
-  const dispatch = useDispatch();
   return (
     <>
       <div className="nav">
-        <ul className={`${theme}`}>
+        <ul>
           <li>
-            <img src={logo} />
+            <img />
           </li>
           <li>
-            
-            <a className="active" onClick={()=>{
-               history.push(`/`);
-            }}> Home</a>
+            <a className="active">Home</a>
           </li>
 
           <li>
@@ -34,7 +19,7 @@ function Navigation() {
         </ul>
       </div>
       <div className="nav">
-        <ul className={`${theme}`}>
+        <ul>
           <li>
             <a>Library</a>
           </li>
@@ -50,11 +35,10 @@ function Navigation() {
           <li>
             <a>Whatch later</a>
           </li>
-          
         </ul>
       </div>
       <div className="nav">
-        <ul className={`${theme}`}>
+        <ul>
           <li>
             <a>Library</a>
           </li>
@@ -68,27 +52,12 @@ function Navigation() {
         </ul>
       </div>
       <div className="nav">
-        <ul className={`${theme}`}>
-          <li>
-            <a onClick={()=>{
-              const action = changeTheme("light-theme")
-              dispatch(action)
-            }}>Light</a>
-          </li>
-
-          <li>
-            <a onClick={()=>{
-              const action = changeTheme("dark-theme")
-              dispatch(action)
-            }}>Dark</a>
-          </li>
-          
-        </ul>
-        
+        <p className="cc">
+          AboutPressCopyrightContact usCreatorAdvertiseDevelopers
+          TermsPrivacyPolicy SafetyHow YouTube worksTest new features © 2021
+          Google LLC
+        </p>
       </div>
-      <div className="nav" ><p className="cc">AboutPressCopyrightContact usCreatorAdvertiseDevelopers
-TermsPrivacyPolicy SafetyHow YouTube worksTest new features
-© 2021 Google LLC</p></div>
     </>
   );
 }
