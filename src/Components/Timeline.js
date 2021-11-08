@@ -106,9 +106,9 @@ function Timeline() {
 
   useEffect(() => {
     // Set tweets
+    
     const action = setTweets(tweets);
     dispatch(action);
-
     // Set users
     const action2 = setUsers(users);
     dispatch(action2);
