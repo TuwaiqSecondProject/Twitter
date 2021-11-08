@@ -8,8 +8,6 @@ function Profile() {
   console.log(username[0]);
   const state = useSelector((state) => {
     console.log(state);
-    // console.log(state.tweetsReducer.tweets);
-    // console.log(state.usersReducer.Users);
     return {
       tweets: state.tweetsReducer.tweets,
       user: state.usersReducer.Users,
@@ -34,6 +32,7 @@ function Profile() {
                   Content={element.Content}
                   date={element.date}
                   numberOfLikes={element.numberOfLikes}
+                  tweetID={element.tweetID}
                   username={username[0]}
                 />
               );
