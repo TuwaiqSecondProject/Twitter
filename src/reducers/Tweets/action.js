@@ -16,4 +16,12 @@ export const decreaseNumberOfLikes = (tweetId) => {
     payload: tweetId };
 };
 
+export const deletTweet = (tweetId) => {
+  return { 
+    type: "DELET_TWEET", 
+    payload: tweetId };
+};
+
+
+
 

@@ -71,7 +71,6 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
           }
         }
         return {
-          // tweets: payload,
           tweets:state.tweets,
         };
 
@@ -82,8 +81,15 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
             }
           }
           return {
-            // tweets: payload,
             tweets:state.tweets,
+          };
+          
+
+          case "DELET_TWEET":
+          return {
+            tweets: state.tweets.filter((element) => {
+              return element.tweetID !== payload;
+            }),
           };
 
     default:
