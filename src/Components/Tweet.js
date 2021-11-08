@@ -1,11 +1,30 @@
-
+import { useDispatch, useSelector } from "react-redux";
+import { addLike } from "../reducers/likes/action";
 import avatar from "../images/avatar.jpg";
 import replay from "../images/arrow-svgrepo-com.svg";
 import likes from "../images/like-svgrepo-com.svg";
 
-function Tweet(UserId, Content, date, numberOfLikes) {
+function Tweet(UserId) {
+  const dispatch = useDispatch();
+  console.log("i am in tweet");
+  console.log(UserId)
+
+  function addLikes(){
+    // userid=localStorage.getItem()
+    const tweetId=UserId.tweetID;
+    const action4 = addLike(tweetId);
+    dispatch(action4);
+ 
+  }
 
 
+  const state = useSelector((state) => {
+    return {
+      tweets: state.tweetsReducer.tweets,
+      user: state.usersReducer.Users,
+      likes: state.likesReducer.likes,
+    };
+  });
 
   return (
     <>
@@ -16,7 +35,7 @@ function Tweet(UserId, Content, date, numberOfLikes) {
               <img src={avatar} />
             </div>
             <div>
-              <p>@twitter</p>
+              <p>@{UserId.username}</p>
             </div>
           </div>
           <div className="contetnt">
@@ -28,7 +47,7 @@ function Tweet(UserId, Content, date, numberOfLikes) {
                 <img src={replay} />
               </button>
 
-              <button >
+              <button onClick={addLikes}>
                 <img src={likes} />
               </button>
               {/* <button> like</button> */}

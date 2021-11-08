@@ -103,7 +103,7 @@ function Timeline() {
     user_1: [1, 2],
     user_3: [1, 2, 3],
   };
-
+  
   useEffect(() => {
     // Set tweets
     const action = setTweets(tweets);
@@ -120,14 +120,15 @@ function Timeline() {
 
   const state = useSelector((state) => {
     console.log(state);
-    console.log(state.tweetsReducer.tweets);
-    console.log(state.usersReducer.Users);
+    // console.log(state.tweetsReducer.tweets);
+    // console.log(state.usersReducer.Users);
     return {
       tweets: state.tweetsReducer.tweets,
       user: state.usersReducer.Users,
       likes: state.likesReducer.likes,
     };
   });
+  // console.log(state.usersReducer.Users);
 
   return (
     <>
@@ -156,17 +157,28 @@ function Timeline() {
           </div>
         </div>
         {state.tweets.map((element) => {
-          // if()
-         git 
+          let userIndex = 1;
+          for (let index = 0; index < state.user.length; index++) {
+            console.log(state.user[index].userId, element.UserId);
+            if (state.user[index].userId == element.UserId) {
+              console.log("pass");
+              userIndex = index;
+              console.log(state.user[userIndex].username)
+            }
+          }
           return (
+            
             <Tweet
               UserId={element.UserId}
               Content={element.Content}
               date={element.date}
               numberOfLikes={element.numberOfLikes}
+              username={state.user[userIndex].username}
+              tweetID={element.tweetID}
+
             />
           );
-        })}{" "}
+        })}
       </div>
     </>
   );
