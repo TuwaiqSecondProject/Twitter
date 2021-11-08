@@ -5,15 +5,17 @@ import message from "../images/message-svgrepo-com.svg";
 import bookmark from "../images/bookmark-svgrepo-com.svg";
 import list from "../images/list-svgrepo-com.svg";
 import profile from "../images/profile-svgrepo-com.svg";
+import logo from "../images/Logo blue.svg";
 
 function Navigation() {
   return (
     <>
       <div>
         <div className="nav">
+          <img class="logo" src={logo} />
           <ul>
             <li>
-              <a className="active">
+              <a>
                 <img src={home} />
                 Home
               </a>
@@ -21,7 +23,6 @@ function Navigation() {
 
             <li>
               <a>
-                {" "}
                 <img src={explorer} />
                 Explore
               </a>
