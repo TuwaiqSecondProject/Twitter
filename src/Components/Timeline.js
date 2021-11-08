@@ -103,7 +103,7 @@ function Timeline() {
     user_1: [1, 2],
     user_3: [1, 2, 3],
   };
-
+  
   useEffect(() => {
     // Set tweets
     
@@ -174,6 +174,8 @@ function Timeline() {
               date={element.date}
               numberOfLikes={element.numberOfLikes}
               username={state.user[userIndex].username}
+              tweetID={element.tweetID}
+
             />
           );
         })}
