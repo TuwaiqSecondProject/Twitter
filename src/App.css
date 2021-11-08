@@ -81,7 +81,7 @@ li img {
   margin-top: 2px;
 }
 .post-container {
-  width: 100%;
+  max-width: 500px;
   display: grid;
   grid-template-rows: auto;
 }

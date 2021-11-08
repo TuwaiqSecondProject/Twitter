@@ -20,8 +20,20 @@ function Profile() {
     <>
       <div className="timeline">
         <div className="post-container">
-          <ProfileDetails></ProfileDetails>
-        
+          {state.user.map((element) => {
+            console.log(username[1], element.username, element.userId);
+
+            if (username[1] == element.userId) {
+              console.log("pass");
+              return (
+                <ProfileDetails
+                  username={element.username}
+                  avatar={element.img}
+                  header={element.header}
+                ></ProfileDetails>
+              );
+            }
+          })}
         </div>
         {state.tweets.map((element) => {
           let userIndex = 1;
@@ -35,6 +47,7 @@ function Profile() {
                   date={element.date}
                   numberOfLikes={element.numberOfLikes}
                   username={username[0]}
+                  avatar={element.img}
                 />
               );
             }
