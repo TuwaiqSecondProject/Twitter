@@ -1,9 +1,11 @@
+
 import avatar from "../images/avatar.jpg";
 import replay from "../images/arrow-svgrepo-com.svg";
 import likes from "../images/like-svgrepo-com.svg";
 
 function Tweet(UserId, Content, date, numberOfLikes) {
-  console.log(UserId);
+
+
 
   return (
     <>
@@ -26,7 +28,7 @@ function Tweet(UserId, Content, date, numberOfLikes) {
                 <img src={replay} />
               </button>
 
-              <button>
+              <button >
                 <img src={likes} />
               </button>
               {/* <button> like</button> */}
