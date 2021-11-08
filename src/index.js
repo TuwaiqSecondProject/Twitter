@@ -4,13 +4,15 @@ import { Provider } from "react-redux";
 import { Route,BrowserRouter } from "react-router-dom";
 import App from "./App";
 import store from "./reducers/store";
+import Login from "./Components/Login";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <Route path="/" component={App} />
+        <Route exact path="/" component={App} />
+        <Route path="/Login" component={Login} />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

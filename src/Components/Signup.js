@@ -3,6 +3,7 @@
 
 function Signup()
 {
+  
   return (
 
 
@@ -15,6 +16,9 @@ function Signup()
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required/>
 
+    <label for="userName"><b>user name </b></label>
+    <input type="text" placeholder="Enter User Name " name="username" required/>
+
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required/>
 
@@ -22,10 +26,10 @@ function Signup()
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required/>
     
     <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"/> Remember me
+      <input type="checkbox" checked="checked" name="remember"/> Remember me
     </label>
     
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    <p>By creating an account you agree to our <a href="#" >Terms & Privacy</a>.</p>
 
     <div>
       <button type="button" class="cancelbtn">Cancel</button>
