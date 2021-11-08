@@ -4,6 +4,7 @@ import { setTweets } from "../reducers/Tweets/action";
 import { setUsers } from "../reducers/Users/action";
 import { setLikes } from "../reducers/likes/action";
 import Tweet from "./Tweet";
+import avatar from "../images/avatar.jpg";
 
 function Timeline() {
   const dispatch = useDispatch();
@@ -70,38 +71,38 @@ function Timeline() {
       username: "Ahmed",
       img: "",
       userPassword: "123456",
-      userId: 2
+      userId: 2,
     },
     {
       username: "Noura",
       img: "",
       userPassword: "654321",
-      userId: 1
+      userId: 1,
     },
     {
       username: "Fahad",
       img: "",
       userPassword: "654320",
-      userId: 3
+      userId: 3,
     },
     {
       username: "Amal",
       img: "",
       userPassword: "653320",
-      userId: 4
+      userId: 4,
     },
     {
       username: "Rema",
       img: "",
       userPassword: "553320",
-      userId: 5
+      userId: 5,
     },
   ];
 
   const likes = {
     user_1: [1, 2],
     user_3: [1, 2, 3],
-  }
+  };
 
   useEffect(() => {
     // Set tweets
@@ -115,15 +116,12 @@ function Timeline() {
     // Set Likes
     const action3 = setLikes(likes);
     dispatch(action3);
-
   }, []);
 
-
-
-
   const state = useSelector((state) => {
-    console.log(state)
-
+    console.log(state);
+    console.log(state.tweetsReducer.tweets);
+    console.log(state.usersReducer.Users);
     return {
       tweets: state.tweetsReducer.tweets,
       user: state.usersReducer.Users,
@@ -131,22 +129,45 @@ function Timeline() {
     };
   });
 
-
-
   return (
     <>
-
-      {state.tweets.map((element) => {
-        return (
-
-          <Tweet
-            UserId={element.UserId}
-            Content={element.Content}
-            date={element.date}
-            numberOfLikes={element.numberOfLikes}
-          />
-        );
-      })}
+      <div className="timeline">
+        <div className="post-container">
+          <div className="post">
+            <div className="header">
+              <div>
+                <img src={avatar} />
+              </div>
+              <div>
+                <p>@twitter</p>
+              </div>
+            </div>
+            <div>
+              <textarea
+                className="tweet-input"
+                placeholder="What's happening"
+              />
+            </div>
+            <div className="footer">
+              <div>
+                <button className="btn button1">Tweet</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {state.tweets.map((element) => {
+          // if()
+         git 
+          return (
+            <Tweet
+              UserId={element.UserId}
+              Content={element.Content}
+              date={element.date}
+              numberOfLikes={element.numberOfLikes}
+            />
+          );
+        })}{" "}
+      </div>
     </>
   );
 }

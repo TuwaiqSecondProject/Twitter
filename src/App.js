@@ -10,10 +10,8 @@ function App() {
         <div className="left-col">
           <Navigation></Navigation>
         </div>
-        <div className="timeline">
-          <div className="mid-col">
-            <Timeline></Timeline>
-          </div>
+        <div className="mid-col">
+          <Timeline></Timeline>
         </div>
         <div className="right-col">
           <Search></Search>
