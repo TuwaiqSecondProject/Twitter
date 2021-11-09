@@ -1,7 +1,6 @@
 const initialState = {
   searchRes: [],
 
-
   tweets: [
     {
       Content: "hello world",
@@ -9,7 +8,11 @@ const initialState = {
       tweetID: 1,
       date: "6/novmber",
       numberOfLikes: 5,
-      replies: ["a", "b", "c"],
+      replies: [
+        { UserId: 4, Content: "Nice", date: "30/oct", numberOfLikes: 2 },
+        { UserId: 2, Content: "wow", date: "30/oct", numberOfLikes: 1 },
+        { UserId: 3, Content: "good", date: "30/oct", numberOfLikes: 0 },
+      ],
     },
     {
       Content: "BIG NEWS lol jk still Twitter",
@@ -53,7 +56,11 @@ const initialState = {
       tweetID: 6,
       date: "30/oct",
       numberOfLikes: 8820,
-      replies: ["a", "b", "c"],
+      replies: [
+        { UserId: 1, Content: "Nice", date: "30/oct", numberOfLikes: 2 },
+        { UserId: 2, Content: "wow", date: "30/oct", numberOfLikes: 1 },
+        { UserId: 3, Content: "good", date: "30/oct", numberOfLikes: 0 },
+      ],
     },
     {
       Content:
@@ -75,10 +82,10 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
       };
 
     case "SET_SEARCH":
-       return {
-          tweets: state.tweets,
-          searchRes: payload,
-        };
+      return {
+        tweets: state.tweets,
+        searchRes: payload,
+      };
 
     case "ADD_NUMBER_OF_LIKES":
       for (let i = 0; i < state.tweets.length; i++) {
@@ -96,7 +103,6 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         if (state.tweets[i].tweetID === payload) {
           state.tweets[i].numberOfLikes = state.tweets[i].numberOfLikes - 1;
         }
-        
       }
       return {
         tweets: state.tweets,
@@ -123,4 +129,3 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
   }
 };
 export default tweetsReducer;
-

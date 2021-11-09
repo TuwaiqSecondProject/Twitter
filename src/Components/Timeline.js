@@ -4,8 +4,12 @@ import Tweet from "./Tweet";
 import avatar from "../images/avatar.jpg";
 
 function Timeline() {
+  // Test
+  const userInfo = ["Fahad", 3];
+  localStorage.setItem("currentUser", JSON.stringify(userInfo));
+
+// 
   const state = useSelector((state) => {
-    console.log(state);
     return {
       tweets: state.tweetsReducer.tweets,
       user: state.usersReducer.Users,
@@ -43,15 +47,11 @@ function Timeline() {
         {state.searchRes.map((element) => {
           let userIndex = 1;
           for (let index = 0; index < state.user.length; index++) {
-            console.log(state.user[index].userId, element.UserId);
             if (state.user[index].userId == element.UserId) {
-              console.log("pass");
               userIndex = index;
-              console.log(state.user[userIndex].username)
             }
           }
           return (
-            
             <Tweet
               UserId={element.UserId}
               Content={element.Content}
@@ -65,11 +65,8 @@ function Timeline() {
         {state.tweets.map((element) => {
           let userIndex = 1;
           for (let index = 0; index < state.user.length; index++) {
-            console.log(state.user[index].userId, element.UserId);
             if (state.user[index].userId == element.UserId) {
-              console.log("pass");
               userIndex = index;
-              console.log(state.user[userIndex].username);
             }
           }
           return (
