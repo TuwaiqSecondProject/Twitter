@@ -9,7 +9,7 @@ import likes from "../images/like-svgrepo-com.svg";
 import delet from "../images/delete-button-svgrepo-com.svg";
 import { useState} from "react";
 
-import { useState } from "react";
+
 import { useHistory } from "react-router";
 
 function Tweet(UserId) {
@@ -55,9 +55,6 @@ function Tweet(UserId) {
       <>
         <div
           className="post-container"
-          onClick={(e) => {
-            history.push(`/tweet/${userid}`);
-          }}
         >
           <div className="post">
             <div className="header">
@@ -68,7 +65,10 @@ function Tweet(UserId) {
                 <p>@{UserId.username}</p>
               </div>
             </div>
-            <div className="contetnt">
+            <div className="contetnt"
+            onClick={(e) => {
+              history.push(`/tweet/${userid}`);
+            }}>
               <p>{UserId.Content}</p>
             </div>
             <div className="footer">
@@ -95,9 +95,8 @@ function Tweet(UserId) {
   } else {
     return (
       <>
-        <div className="post-container"  onClick={(e) => {
-            history.push(`/tweet/${userid}`);
-          }}git  >
+        <div className="post-container" 
+          >
           <div className="post" >
             <div className="header">
               <div>
@@ -107,7 +106,10 @@ function Tweet(UserId) {
                 <p>@{UserId.username}</p>
               </div>
             </div>
-            <div className="contetnt">
+            <div className="contetnt" 
+            onClick={(e) => {
+              history.push(`/tweet/${userid}`);
+            }}>
               <p>{UserId.Content}</p>
             </div>
             <div className="footer">
