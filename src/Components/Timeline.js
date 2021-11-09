@@ -4,8 +4,6 @@ import Tweet from "./Tweet";
 import avatar from "../images/avatar.jpg";
 
 function Timeline() {
-  
-
   const state = useSelector((state) => {
     console.log(state);
     return {
@@ -14,7 +12,6 @@ function Timeline() {
       likes: state.likesReducer.likes,
     };
   });
- 
 
   return (
     <>
@@ -49,11 +46,10 @@ function Timeline() {
             if (state.user[index].userId == element.UserId) {
               console.log("pass");
               userIndex = index;
-              console.log(state.user[userIndex].username)
+              console.log(state.user[userIndex].username);
             }
           }
           return (
-            
             <Tweet
               UserId={element.UserId}
               Content={element.Content}
@@ -61,7 +57,6 @@ function Timeline() {
               numberOfLikes={element.numberOfLikes}
               username={state.user[userIndex].username}
               tweetID={element.tweetID}
-
             />
           );
         })}

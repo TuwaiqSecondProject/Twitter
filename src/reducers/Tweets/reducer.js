@@ -1,11 +1,12 @@
 const initialState = {
-  tweets:  [
+  tweets: [
     {
       Content: "hello world",
       UserId: 1,
       tweetID: 1,
       date: "6/novmber",
       numberOfLikes: 5,
+      replies: ["a", "b", "c"],
     },
     {
       Content: "BIG NEWS lol jk still Twitter",
@@ -13,6 +14,7 @@ const initialState = {
       tweetID: 2,
       date: "4/novmber",
       numberOfLikes: 4,
+      replies: ["a", "b", "c"],
     },
     {
       Content:
@@ -21,6 +23,7 @@ const initialState = {
       tweetID: 3,
       date: "2/novmber",
       numberOfLikes: 51,
+      replies: ["a", "b", "c"],
     },
     {
       Content:
@@ -29,6 +32,7 @@ const initialState = {
       tweetID: 4,
       date: "6/novmber",
       numberOfLikes: 2,
+      replies: ["a", "b", "c"],
     },
     {
       Content: "𝐁𝐈𝐆 𝐁𝐄𝐍𝐙 ",
@@ -37,6 +41,7 @@ const initialState = {
       tweetID: 5,
       date: "1/novmber",
       numberOfLikes: 126485,
+      replies: ["a", "b", "c"],
     },
     {
       Content:
@@ -45,6 +50,7 @@ const initialState = {
       tweetID: 6,
       date: "30/oct",
       numberOfLikes: 8820,
+      replies: ["a", "b", "c"],
     },
     {
       Content:
@@ -53,6 +59,7 @@ const initialState = {
       tweetID: 7,
       date: "19/oct",
       numberOfLikes: 4562,
+      replies: ["a", "b", "c"],
     },
   ],
 };
@@ -64,34 +71,39 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         tweets: payload,
       };
 
-      case "ADD_NUMBER_OF_LIKES":
-        for(let i=0;i<state.tweets.length;i++){
-          if(state.tweets[i].tweetID===payload){
-            state.tweets[i].numberOfLikes=state.tweets[i].numberOfLikes+1;
-          }
+    case "ADD_NUMBER_OF_LIKES":
+      for (let i = 0; i < state.tweets.length; i++) {
+        if (state.tweets[i].tweetID === payload) {
+          state.tweets[i].numberOfLikes = state.tweets[i].numberOfLikes + 1;
         }
-        return {
-          tweets:state.tweets,
-        };
+      }
+      return {
+        tweets: state.tweets,
+      };
 
-        case "DECREASE_NUMBER_OF_LIKES":
-          for(let i=0;i<state.tweets.length;i++){
-            if(state.tweets[i].tweetID===payload){
-              state.tweets[i].numberOfLikes=state.tweets[i].numberOfLikes-1;
-            }
-          }
-          return {
-            tweets:state.tweets,
-          };
-          
+    case "DECREASE_NUMBER_OF_LIKES":
+      for (let i = 0; i < state.tweets.length; i++) {
+        if (state.tweets[i].tweetID === payload) {
+          state.tweets[i].numberOfLikes = state.tweets[i].numberOfLikes - 1;
+        }
+      }
+      return {
+        tweets: state.tweets,
+      };
 
-          case "DELET_TWEET":
-          return {
-            tweets: state.tweets.filter((element) => {
-              return element.tweetID !== payload;
-            }),
-          };
+    case "DELET_TWEET":
+      return {
+        tweets: state.tweets.filter((element) => {
+          return element.tweetID !== payload;
+        }),
+      };
 
+    case "ADD_REPLAY_TO_TWEET":
+      return {
+        tweets: state.tweets.filter((element) => {
+          return element.tweetID !== payload;
+        }),
+      };
     default:
       return state;
   }
