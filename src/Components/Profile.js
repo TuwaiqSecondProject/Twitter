@@ -17,24 +17,22 @@ function Profile() {
   return (
     <>
       <div className="timeline">
-        <div className="post-container">
-          {state.user.map((element) => {
-            console.log(username[1], element.username, element.userId);
+        {state.user.map((element) => {
+          console.log(username[1], element.username, element.userId);
 
-            if (username[1] == element.userId) {
-              console.log("pass");
-              return (
-                <ProfileDetails
-                  username={element.username}
-                  avatar={element.img}
-                  header={element.header}
-                ></ProfileDetails>
-              );
-            }
-          })}
-        </div>
+          if (username[1] == element.userId) {
+            console.log("pass");
+            return (
+              <ProfileDetails
+                username={element.username}
+                avatar={element.img}
+                header={element.header}
+              ></ProfileDetails>
+            );
+          }
+        })}
+
         {state.tweets.map((element) => {
-          let userIndex = 1;
           for (let index = 0; index < state.user.length; index++) {
             console.log(state.user[index].userId, element.UserId);
             if (username[1] == element.UserId) {
