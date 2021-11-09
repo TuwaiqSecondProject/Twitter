@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Tweet from "./Tweet";
+import { addTweet } from "../reducers/Tweets/action";
 import avatar from "../images/avatar.jpg";
 
 function Timeline() {
@@ -12,7 +13,18 @@ function Timeline() {
       likes: state.likesReducer.likes,
     };
   });
+  const [tweetValue,setTweet]=useState("")
+  const dispatch = useDispatch();
+  
+  function newTweetValue(e){
+    const newTweetValue=e.target.value;
+    setTweet(newTweetValue)
+  }
 
+  function createTweet(){
+    const action8=addTweet(tweetValue)
+    dispatch(action8)
+  }
   return (
     <>
       <div className="timeline">
@@ -30,11 +42,12 @@ function Timeline() {
               <textarea
                 className="tweet-input"
                 placeholder="What's happening"
+                onChange={newTweetValue}
               />
             </div>
             <div className="footer">
               <div>
-                <button className="btn button1">Tweet</button>
+                <button className="btn button1" onClick={createTweet}>Tweet</button>
               </div>
             </div>
           </div>

@@ -22,6 +22,12 @@ export const deletTweet = (tweetId) => {
     payload: tweetId };
 };
 
+export const addTweet = (tweetContent) => {
+  return { 
+    type: "ADD_TWEET", 
+    payload: tweetContent };
+};
+
 
 
 

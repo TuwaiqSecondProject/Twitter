@@ -104,6 +104,25 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
           return element.tweetID !== payload;
         }),
       };
+
+      case "ADD_TWEET":
+        const currentUser=localStorage.getItem("currentUser")
+        const currentUserId=JSON.parse(currentUser)[1];
+        const newTweet={
+          Content:payload,
+        UserId: currentUserId,
+        tweetID: 6,
+        date: "30/oct",
+        numberOfLikes: 0,
+        replies: ["a", "b", "c"],
+
+        }
+        const array = state.tweets.slice()
+        array.push(newTweet)
+        
+        return {
+          tweets:array,
+        };
     default:
       return state;
   }
