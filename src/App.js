@@ -7,8 +7,10 @@ import Search from "./Components/search";
 import Profile from "./Components/Profile";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
+
 import { setTweets } from "./reducers/Tweets/action";
 import TweetDetails from "./Components/TweetDetails";
+
 
 function App() {
   return (
@@ -19,14 +21,13 @@ function App() {
         </div>
         <div className="mid-col">
           <div>
-            <BrowserRouter>
+           
               <Route exact path="/Timeline" component={Timeline} />
-              <Route exact path="/Profile" component={Profile} />
-              <Route exact path="/Profile" component={Profile} />
+              <Route path="/Profile" component={Profile} />
               <Route exact path="/Login" component={Login} />
               <Route exact path="/Signup" component={Signup} />
               <Route exact path="/tweet/:id" component={TweetDetails} />
-            </BrowserRouter>
+
           </div>
         </div>
         <div className="right-col">

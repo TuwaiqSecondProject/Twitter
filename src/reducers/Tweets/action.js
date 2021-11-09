@@ -27,3 +27,8 @@ export const deletTweet = (tweetId) => {
     type: "DELET_TWEET", 
     payload: tweetId };
 };
+export const addTweet = (tweetContent) => {
+  return { 
+    type: "ADD_TWEET", 
+    payload: tweetContent };
+};
