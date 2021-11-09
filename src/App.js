@@ -27,7 +27,6 @@ function App() {
               <Route path="/Profile" component={Profile} />
               <Route exact path="/Login" component={Login} />
               <Route exact path="/Signup" component={Signup} />
-
               <Route exact path="/tweet/:id" component={TweetDetails} />
 
           </div>
