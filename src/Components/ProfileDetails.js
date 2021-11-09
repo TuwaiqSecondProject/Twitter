@@ -1,8 +1,11 @@
+import { useHistory } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 import avatar1 from "../images/avatar.jpg";
 import header1 from "../images/header.jfif";
 
-const ProfileDetails = ({ username, avatar, header, children }) => {
+const ProfileDetails = ({ username, avatar, header }) => {
   console.log(avatar, header);
+  const history = useHistory();
   return (
     <>
       <div className="profile-container">
@@ -24,8 +27,25 @@ const ProfileDetails = ({ username, avatar, header, children }) => {
           <p className="">85 Following 453 Followers</p>
         </div>
         <div className="profile-footer">
-          <button className="pagnaing">Tweet</button>
-          <button className="pagnaing">Tweets & replies</button>
+          {/* <BrowserRouter>
+            <Route></Route>
+          </BrowserRouter> */}
+          <button
+            className="pagnaing"
+            onClick={(e) => {
+              history.push(`/Profile`);
+            }}
+          >
+            Tweet
+          </button>
+          <button
+            className="pagnaing"
+            onClick={(e) => {
+              history.push(`/Profile/with_replies`);
+            }}
+          >
+            Tweets & replies
+          </button>
           <button className="pagnaing">Media</button>
           <button className="pagnaing">Likes</button>
         </div>

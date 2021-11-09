@@ -1,13 +1,10 @@
 import { useSelector } from "react-redux";
-import avatar from "../images/avatar.jpg";
 import Tweet from "./Tweet";
 import ProfileDetails from "./ProfileDetails";
 
 function Profile() {
   const username = JSON.parse(localStorage.getItem("currentUser"));
-  console.log(username[0]);
   const state = useSelector((state) => {
-    console.log(state);
     return {
       tweets: state.tweetsReducer.tweets,
       user: state.usersReducer.Users,
@@ -18,16 +15,15 @@ function Profile() {
     <>
       <div className="timeline">
         {state.user.map((element) => {
-          console.log(username[1], element.username, element.userId);
-
           if (username[1] == element.userId) {
+            console.log("TEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEST");
             console.log("pass");
             return (
               <ProfileDetails
                 username={element.username}
                 avatar={element.img}
                 header={element.header}
-              ></ProfileDetails>
+              />
             );
           }
         })}

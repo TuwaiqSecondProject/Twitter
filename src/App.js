@@ -11,7 +11,6 @@ import { setTweets } from "./reducers/Tweets/action";
 import TweetDetails from "./Components/TweetDetails";
 
 function App() {
-
   return (
     <>
       <div className="Main-contaner">
@@ -22,6 +21,7 @@ function App() {
           <div>
             <BrowserRouter>
               <Route exact path="/Timeline" component={Timeline} />
+              <Route exact path="/Profile" component={Profile} />
               <Route exact path="/Profile" component={Profile} />
               <Route exact path="/Login" component={Login} />
               <Route exact path="/Signup" component={Signup} />
