@@ -14,7 +14,7 @@ const initialState = {
       userPassword: "654321",
       userId: 1,
       img: "../images/avatar3.jpg",
-      header: "../images/header2.jfif",
+      header: "../cd images/header2.jfif",
     },
     {
       username: "Fahad",
