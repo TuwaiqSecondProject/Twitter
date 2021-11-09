@@ -55,7 +55,7 @@ export const Tweets = [
   },
   {
     Content: "Don’t call it dream, call it a plan",
-    UserId: 1,
+    UserId: 5,
     tweetID:8 ,
     date: "10/oct",
     numberOfLikes: 13 ,
@@ -83,7 +83,7 @@ export const Tweets = [
   },
   {
     Content: "Change the world by being yourself",
-    UserId: 3,
+    UserId: 7,
     tweetID:12 ,
     date: "10/may",
     numberOfLikes: 89,
@@ -159,15 +159,16 @@ export const Tweets = [
 
 export const users = [
   { 
-    username: "Ahmed",
-    img:"",
-    userPassword: "123456",
-    userId: 2 },
-  { 
     username: "Noura",
     img:"",
     userPassword: "654321",
     userId: 1 
+  },
+  { 
+    username: "Ahmed",
+    img:"",
+    userPassword: "123456",
+    userId: 2 
   },
   { 
     username: "Fahad",
