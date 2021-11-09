@@ -1,3 +1,4 @@
+
 const initialState = {
   searchRes: [],
 
@@ -124,6 +125,28 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         }),
         searchRes: state.searchRes,
       };
+
+      case "ADD_TWEET":
+        const currentUser=localStorage.getItem("currentUser")
+        const currentUserId=JSON.parse(currentUser)[1];
+        const newTweet={
+          Content:payload,
+          UserId: currentUserId,
+          tweetID: (++(state.tweets[state.tweets.length-1].tweetID)),
+          date: "30/oct",
+          numberOfLikes: 0,
+          replies: [],
+        }
+        
+        console.log("in add reducer")
+        console.log(newTweet)
+        const array = state.tweets.slice()
+        array.unshift(newTweet)
+        
+        return {
+          tweets:array,
+          searchRes: state.searchRes,
+        };
     default:
       return state;
   }
