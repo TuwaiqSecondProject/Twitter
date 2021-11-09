@@ -1,6 +1,7 @@
 const initialState = {
   searchRes: [],
 
+
   tweets: [
     {
       Content: "hello world",
