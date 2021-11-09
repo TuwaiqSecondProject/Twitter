@@ -1,5 +1,4 @@
 const initialState = {
-
   searchRes: [],
 
 
@@ -89,6 +88,7 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
       }
       return {
         tweets: state.tweets,
+        searchRes: state.searchRes,
       };
 
     case "DECREASE_NUMBER_OF_LIKES":
@@ -96,9 +96,11 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         if (state.tweets[i].tweetID === payload) {
           state.tweets[i].numberOfLikes = state.tweets[i].numberOfLikes - 1;
         }
+        
       }
       return {
         tweets: state.tweets,
+        searchRes: state.searchRes,
       };
 
     case "DELET_TWEET":
@@ -106,6 +108,7 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         tweets: state.tweets.filter((element) => {
           return element.tweetID !== payload;
         }),
+        searchRes: state.searchRes,
       };
 
     case "ADD_REPLAY_TO_TWEET":
@@ -113,6 +116,7 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         tweets: state.tweets.filter((element) => {
           return element.tweetID !== payload;
         }),
+        searchRes: state.searchRes,
       };
     default:
       return state;
