@@ -1,19 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { Route,BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 import App from "./App";
 import store from "./reducers/store";
 import Login from "./Components/Login";
 import reportWebVitals from "./reportWebVitals";
+import Profile from "./Components/Profile";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <Route exact path="/" component={App} />
-        <Route path="/Login" component={Login} />
-      </BrowserRouter>
+     <App/>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
