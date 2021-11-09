@@ -1,4 +1,8 @@
 const initialState = {
+
+  searchRes: [],
+
+
   tweets: [
     {
       Content: "hello world",
@@ -71,6 +75,12 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         tweets: payload,
       };
 
+    case "SET_SEARCH":
+       return {
+          tweets: state.tweets,
+          searchRes: payload,
+        };
+
     case "ADD_NUMBER_OF_LIKES":
       for (let i = 0; i < state.tweets.length; i++) {
         if (state.tweets[i].tweetID === payload) {
@@ -109,3 +119,4 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
   }
 };
 export default tweetsReducer;
+

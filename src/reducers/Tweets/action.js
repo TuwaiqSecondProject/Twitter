@@ -4,6 +4,13 @@ export const setTweets = (tweets) => {
     payload: tweets };
 };
 
+
+export const setSearche = (tweets) => {
+  return { 
+    type: "SET_SEARCH", 
+    payload: tweets };
+};
+
 export const addNumberOfLikes = (tweetId) => {
   return { 
     type: "ADD_NUMBER_OF_LIKES", 
@@ -21,7 +28,3 @@ export const deletTweet = (tweetId) => {
     type: "DELET_TWEET", 
     payload: tweetId };
 };
-
-
-
-
