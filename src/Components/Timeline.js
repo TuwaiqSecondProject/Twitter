@@ -6,7 +6,7 @@ import avatar from "../images/avatar.jpg";
 
 function Timeline() {
   // Test
-  const userInfo = ["Fahad", 3];
+  const userInfo = ["Noura", 1];
   localStorage.setItem("currentUser", JSON.stringify(userInfo));
 
 // 
