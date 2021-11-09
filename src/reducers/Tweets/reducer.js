@@ -1,4 +1,6 @@
+
 const initialState = {
+  searchRes: [],
   tweets: [
     {
       Content: "hello world",
@@ -71,6 +73,12 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         tweets: payload,
       };
 
+    case "SET_SEARCH":
+       return {
+          tweets: state.tweets,
+          searchRes: payload,
+        };
+
     case "ADD_NUMBER_OF_LIKES":
       for (let i = 0; i < state.tweets.length; i++) {
         if (state.tweets[i].tweetID === payload) {
@@ -79,6 +87,7 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
       }
       return {
         tweets: state.tweets,
+        searchRes: state.searchRes,
       };
 
     case "DECREASE_NUMBER_OF_LIKES":
@@ -86,9 +95,11 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         if (state.tweets[i].tweetID === payload) {
           state.tweets[i].numberOfLikes = state.tweets[i].numberOfLikes - 1;
         }
+        
       }
       return {
         tweets: state.tweets,
+        searchRes: state.searchRes,
       };
 
     case "DELET_TWEET":
@@ -96,6 +107,7 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         tweets: state.tweets.filter((element) => {
           return element.tweetID !== payload;
         }),
+        searchRes: state.searchRes,
       };
 
     case "ADD_REPLAY_TO_TWEET":
@@ -103,6 +115,7 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         tweets: state.tweets.filter((element) => {
           return element.tweetID !== payload;
         }),
+        searchRes: state.searchRes,
       };
 
       case "ADD_TWEET":
@@ -110,21 +123,25 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
         const currentUserId=JSON.parse(currentUser)[1];
         const newTweet={
           Content:payload,
-        UserId: currentUserId,
-        tweetID: 6,
-        date: "30/oct",
-        numberOfLikes: 0,
-        replies: ["a", "b", "c"],
-
+          UserId: currentUserId,
+          tweetID: (++(state.tweets[state.tweets.length-1].tweetID)),
+          date: "30/oct",
+          numberOfLikes: 0,
+          replies: [],
         }
+        
+        console.log("in add reducer")
+        console.log(newTweet)
         const array = state.tweets.slice()
-        array.push(newTweet)
+        array.unshift(newTweet)
         
         return {
           tweets:array,
+          searchRes: state.searchRes,
         };
     default:
       return state;
   }
 };
 export default tweetsReducer;
+

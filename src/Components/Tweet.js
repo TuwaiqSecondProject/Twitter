@@ -6,6 +6,7 @@ import { decreaseNumberOfLikes } from "../reducers/Tweets/action";
 import avatar from "../images/avatar.jpg";
 import replay from "../images/arrow-svgrepo-com.svg";
 import likes from "../images/like-svgrepo-com.svg";
+import delet from "../images/delete-button-svgrepo-com.svg";
 import { useState} from "react";
 
 function Tweet(UserId) {
@@ -80,7 +81,7 @@ function Tweet(UserId) {
                   <img src={likes} />
                 </button>{UserId.numberOfLikes}
                 {/* <button> like</button> */}
-                <button style={{color:"black"}} onClick={deletTweett}>Delet</button>
+                <button style={{marginLeft:"220px"}} onClick={deletTweett}><img src={delet} /></button>
                 
                 
               </div>

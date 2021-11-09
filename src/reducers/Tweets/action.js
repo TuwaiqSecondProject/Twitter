@@ -1,6 +1,12 @@
 export const setTweets = (tweets) => {
   return { 
-    type: "SET_TWEETS", 
+    types: "SET_TWEETS", 
+    payload: tweets };
+};
+
+export const setSearche = (tweets) => {
+  return { 
+    type: "SET_SEARCH", 
     payload: tweets };
 };
 
@@ -21,13 +27,8 @@ export const deletTweet = (tweetId) => {
     type: "DELET_TWEET", 
     payload: tweetId };
 };
-
 export const addTweet = (tweetContent) => {
   return { 
     type: "ADD_TWEET", 
     payload: tweetContent };
 };
-
-
-
-
