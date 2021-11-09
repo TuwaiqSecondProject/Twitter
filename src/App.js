@@ -13,7 +13,6 @@ import TweetDetails from "./Components/TweetDetails";
 
 
 function App() {
-
   return (
     <>
       <div className="Main-contaner">
