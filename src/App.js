@@ -7,16 +7,23 @@ import Search from "./Components/search";
 import Profile from "./Components/Profile";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
+import BottomBar from "./Components/BottomBar";
 
 import { setTweets } from "./reducers/Tweets/action";
 import TweetDetails from "./Components/TweetDetails";
+import Iconsbar from "./Components/Iconsbar";
 
 function App() {
   return (
     <>
       <div className="Main-contaner">
         <div className="left-col">
-          <Navigation></Navigation>
+          <div className="Navigation-component">
+            <Navigation></Navigation>
+          </div>
+          <div className="Iconsbar-component">
+            <Iconsbar></Iconsbar>
+          </div>
         </div>
         <div className="mid-col">
           <div>
@@ -27,6 +34,7 @@ function App() {
               <Route exact path="/Signup" component={Signup} />
               <Route exact path="/tweet/:id" component={TweetDetails} />
             </div>
+            <BottomBar></BottomBar>
           </div>
         </div>
         <div className="right-col">

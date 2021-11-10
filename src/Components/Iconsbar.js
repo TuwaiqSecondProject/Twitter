@@ -8,11 +8,11 @@ import list from "../images/list-svgrepo-com.svg";
 import profile from "../images/profile-svgrepo-com.svg";
 import logo from "../images/Logo blue.svg";
 
-function Navigation() {
+function Iconsbar() {
   const history = useHistory();
   return (
     <>
-      <div className="Navigation-component">
+      <div className="Iconsbar-component">
         <div className="nav">
           <img class="logo" src={logo} />
           <ul>
@@ -23,19 +23,17 @@ function Navigation() {
                 }}
               >
                 <img src={home} />
-                Home
               </a>
             </li>
 
             <li>
               <a>
                 <img src={explorer} />
-                Explore
               </a>
             </li>
             <li>
               <a>
-                <img src={notification} /> Notification
+                <img src={notification} />
               </a>
             </li>
           </ul>
@@ -45,19 +43,16 @@ function Navigation() {
             <li>
               <a>
                 <img src={message} />
-                Messages
               </a>
             </li>
             <li>
               <a>
                 <img src={bookmark} />
-                Bookmark
               </a>
             </li>
             <li>
               <a>
                 <img src={list} />
-                List
               </a>
             </li>
             <li>
@@ -71,7 +66,6 @@ function Navigation() {
                 }}
               >
                 <img src={profile} />
-                Profile
               </a>
             </li>
           </ul>
@@ -80,4 +74,4 @@ function Navigation() {
     </>
   );
 }
-export default Navigation;
+export default Iconsbar;
