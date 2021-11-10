@@ -21,7 +21,7 @@ const initialState = {
       tweetID: 2,
       date: "4/novmber",
       numberOfLikes: 4,
-      tweetImg: "/images/avatar10.jpg",
+      tweetImg:[ "/images/avatar10.jpg", "/images/avatar10.jpg", "/images/avatar10.jpg"],
       replies: ["a", "b", "c"],
     },
     {
@@ -48,7 +48,7 @@ const initialState = {
       tweetID: 5,
       date: "1/novmber",
       numberOfLikes: 126485,
-      tweetImg: "/images/avatar12.jpg",
+      tweetImg: ["/images/avatar12.jpg"],
       replies: ["a", "b", "c"],
     },
     {
@@ -58,7 +58,7 @@ const initialState = {
       tweetID: 6,
       date: "30/oct",
       numberOfLikes: 8820,
-      tweetImg: "/images/avatar11.jpg",
+      tweetImg: ["/images/avatar11.jpg","/images/FC-OrLiXIAs0Qtv.jfif"],
       replies: [
         { UserId: 1, Content: "Nice", date: "30/oct", numberOfLikes: 2 },
         { UserId: 2, Content: "wow", date: "30/oct", numberOfLikes: 1 },
