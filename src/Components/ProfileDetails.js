@@ -4,7 +4,6 @@ import avatar1 from "../images/avatar.jpg";
 import header1 from "../images/header.jfif";
 
 const ProfileDetails = ({ username, avatar, header }) => {
-  console.log(avatar, header);
   const history = useHistory();
   return (
     <>
@@ -33,7 +32,7 @@ const ProfileDetails = ({ username, avatar, header }) => {
           <button
             className="pagnaing"
             onClick={(e) => {
-              history.push(`/Profile`);
+              history.replace(`/Profile`);
             }}
           >
             Tweet
@@ -41,13 +40,20 @@ const ProfileDetails = ({ username, avatar, header }) => {
           <button
             className="pagnaing"
             onClick={(e) => {
-              history.push(`/Profile/with_replies`);
+              history.replace(`/Profile/with_replies`);
             }}
           >
             Tweets & replies
           </button>
           <button className="pagnaing">Media</button>
-          <button className="pagnaing">Likes</button>
+          <button
+            className="pagnaing"
+            onClick={(e) => {
+              history.replace(`/Profile/likes`);
+            }}
+          >
+            Likes
+          </button>
         </div>
       </div>
     </>

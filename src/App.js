@@ -11,7 +11,6 @@ import Signup from "./Components/Signup";
 import { setTweets } from "./reducers/Tweets/action";
 import TweetDetails from "./Components/TweetDetails";
 
-
 function App() {
   return (
     <>
@@ -21,13 +20,13 @@ function App() {
         </div>
         <div className="mid-col">
           <div>
-           
+            <div className="timeline">
               <Route exact path="/Timeline" component={Timeline} />
               <Route path="/Profile" component={Profile} />
               <Route exact path="/Login" component={Login} />
               <Route exact path="/Signup" component={Signup} />
               <Route exact path="/tweet/:id" component={TweetDetails} />
-
+            </div>
           </div>
         </div>
         <div className="right-col">

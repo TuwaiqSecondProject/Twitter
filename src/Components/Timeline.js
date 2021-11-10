@@ -5,10 +5,6 @@ import { addTweet } from "../reducers/Tweets/action";
 import avatar from "../images/avatar.jpg";
 
 function Timeline() {
-  // Test
-
-
-// 
   const state = useSelector((state) => {
     return {
       tweets: state.tweetsReducer.tweets,
@@ -17,17 +13,17 @@ function Timeline() {
       searchRes: state.tweetsReducer.searchRes,
     };
   });
-  const [tweetValue,setTweet]=useState("")
+  const [tweetValue, setTweet] = useState("");
   const dispatch = useDispatch();
-  
-  function newTweetValue(e){
-    const newTweetValue=e.target.value;
-    setTweet(newTweetValue)
+
+  function newTweetValue(e) {
+    const newTweetValue = e.target.value;
+    setTweet(newTweetValue);
   }
 
-  function createTweet(){
-    const action8=addTweet(tweetValue)
-    dispatch(action8)
+  function createTweet() {
+    const action8 = addTweet(tweetValue);
+    dispatch(action8);
   }
   return (
     <>
@@ -51,7 +47,9 @@ function Timeline() {
             </div>
             <div className="footer">
               <div>
-                <button className="btn button1" onClick={createTweet}>Tweet</button>
+                <button className="btn button1" onClick={createTweet}>
+                  Tweet
+                </button>
               </div>
             </div>
           </div>
@@ -69,6 +67,7 @@ function Timeline() {
               Content={element.Content}
               date={element.date}
               numberOfLikes={element.numberOfLikes}
+              avatar={element.img}
               username={state.user[userIndex].username}
             />
           );
@@ -77,13 +76,9 @@ function Timeline() {
         {state.tweets.map((element) => {
           let userIndex = 1;
           for (let index = 0; index < state.user.length; index++) {
-
-            
             if (state.user[index].userId == element.UserId) {
-              
               userIndex = index;
-              
-}
+            }
           }
           return (
             <Tweet

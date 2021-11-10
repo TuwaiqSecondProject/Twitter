@@ -5,7 +5,6 @@ const initialState = {
   },
 };
 
-
 const likesReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case "SET_LIKES":
@@ -13,19 +12,19 @@ const likesReducer = (state = initialState, { type, payload }) => {
         likes: payload,
       };
 
-      case "ADD_LIKE":
-        const currentUser=localStorage.getItem("currentUser")
-        const currentUserId=JSON.parse(currentUser)[1];
-        if(state.likes['user_'+currentUserId]){
-          const array = state.likes['user_'+currentUserId].slice()
-          array.push(payload)
-          state.likes['user_'+currentUserId]=array;
-        }else{
-          state.likes['user_'+currentUserId]=[payload];
-        }
-        return {
-          likes: state.likes,
-        };
+    case "ADD_LIKE":
+      const currentUser = localStorage.getItem("currentUser");
+      const currentUserId = JSON.parse(currentUser)[1];
+      if (state.likes["user_" + currentUserId]) {
+        const array = state.likes["user_" + currentUserId].slice();
+        array.push(payload);
+        state.likes["user_" + currentUserId] = array;
+      } else {
+        state.likes["user_" + currentUserId] = [payload];
+      }
+      return {
+        likes: state.likes,
+      };
 
     default:
       return state;
