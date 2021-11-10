@@ -68,6 +68,7 @@ function Tweet(UserId) {
               }}
             >
               <p>{UserId.Content}</p>
+              
             </div>
             <div className="footer">
               <div>
@@ -109,6 +110,8 @@ function Tweet(UserId) {
               }}
             >
               <p>{UserId.Content}</p>
+              {UserId.tweetImg != null ?  <img src={UserId.tweetImg}/> : ""}
+             
             </div>
             <div className="footer">
               <div>

@@ -88,6 +88,7 @@ function Timeline() {
               numberOfLikes={element.numberOfLikes}
               username={state.user[userIndex].username}
               tweetID={element.tweetID}
+              tweetImg={element.tweetImg}
             />
           );
         })}
