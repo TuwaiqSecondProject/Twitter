@@ -24,14 +24,14 @@ function Login() {
     setUserPassword(newUserPassword);
   }
 
-  function Currentuser(){
-    for(let i=0;i<state.user.length;i++){
-      if(userName==state.user[i].username){
-        if(userPassord==state.user[i].userPassword){
-          const userInfo=[state.user[i].username,state.user[i].userId]
-          localStorage.setItem("currentUser",JSON.stringify(userInfo))
-          alert(" Welcome "+state.user[i].username)
-          history.push(`/App`)
+  function Currentuser() {
+    for (let i = 0; i < state.user.length; i++) {
+      if (userName == state.user[i].username) {
+        if (userPassord == state.user[i].userPassword) {
+          const userInfo = [state.user[i].username, state.user[i].userId];
+          localStorage.setItem("currentUser", JSON.stringify(userInfo));
+          alert(" Welcome " + state.user[i].username);
+          history.push(`/App`);
           return;
         } else {
           alert("The password is incorrect");
@@ -47,47 +47,61 @@ function Login() {
   }
 
   return (
-    <div className="login-container">
-      <div>
-        <label for="uname">
-          <b>Username</b>
-        </label>
-        <input
-          type="text"
-          placeholder="Enter Username"
-          onChange={userNameValue}
-          name="uname"
-          required
-        />
+    <div className="container">
+      <div className="center">
+        <div className="login-containe">
+          <h1>Login</h1>
+          <div className="margin-center">
+            <label for="uname">
+              <p>Username</p>
+            </label>
+            <input
+              className="login-input"
+              type="text"
+              placeholder="Enter Username"
+              onChange={userNameValue}
+              name="uname"
+              required
+            />
 
-        <label for="psw">
-          <b>Password</b>
-        </label>
-        <input
-          type="password"
-          placeholder="Enter Password"
-          onChange={userPasswordValue}
-          name="psw"
-          required
-        />
+            <label for="psw">
+              <p>Password</p>
+            </label>
+            <input
+              className="login-input"
+              type="password"
+              placeholder="Enter Password"
+              onChange={userPasswordValue}
+              name="psw"
+              required
+            />
+          </div>
+          <div className="margin-center">
+            <br />
+            <button className="button1" type="submit" onClick={Currentuser}>
+              Login
+            </button>
 
-        <button type="submit" onClick={Currentuser}>
-          Login
-        </button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember" />{" "}
+              Remember me
+            </label>
+            <br />
 
-        <label>
-          <input type="checkbox" checked="checked" name="remember" /> Remember
-          me
-        </label>
-      </div>
+            <br />
+            <span class="psw">
+              Forgot <a href="#">password?</a>
+            </span>
+            <br />
+            <br />
 
-      <div>
-        <button type="button" class="cancelbtn">
-          Cancel
-        </button>
-        <span class="psw">
-          Forgot <a href="#">password?</a>
-        </span>
+            <span  class="psw">
+               <a onClick={()=>{
+                  history.push(`/signup`);
+               }} >Create new account?</a>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

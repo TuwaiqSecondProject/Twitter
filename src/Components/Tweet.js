@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 import { addNumberOfLikes } from "../reducers/Tweets/action";
 import { deletTweet } from "../reducers/Tweets/action";
 import { decreaseNumberOfLikes } from "../reducers/Tweets/action";
-import avatar from "../images/avatar.jpg";
+import avatar1 from'../images/avatar5.jpg';
 import replay from "../images/arrow-svgrepo-com.svg";
 import likes from "../images/like-svgrepo-com.svg";
 import delet from "../images/delete-button-svgrepo-com.svg";
@@ -55,7 +55,7 @@ function Tweet(UserId) {
           <div className="post">
             <div className="header">
               <div>
-                <img src={UserId.avatar} />
+                <img src={avatar1} />
               </div>
               <div>
                 <p>@{UserId.username}</p>
@@ -64,7 +64,7 @@ function Tweet(UserId) {
             <div
               className="contetnt"
               onClick={(e) => {
-                history.push(`/tweet/${userid}`);
+                history.replace(`/App/tweet/${userid}`);
               }}
             >
               <p>{UserId.Content}</p>
@@ -78,9 +78,10 @@ function Tweet(UserId) {
                 <button onClick={addLikes}>
                   <img src={likes} />
                 </button>
-                {UserId.numberOfLikes}
+                <p>{UserId.numberOfLikes}</p>
+                
                 {/* <button> like</button> */}
-                <button style={{ marginLeft: "220px" }} onClick={deletTweett}>
+                <button  onClick={deletTweett}>
                   <img src={delet} />
                 </button>
               </div>
