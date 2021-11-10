@@ -9,13 +9,25 @@ import profile from "../images/profile-svgrepo-com.svg";
 import logo from "../images/Logo blue.svg";
 
 const BottomBar = () => {
+  const history = useHistory();
   return (
     <div class="navbar">
-      <a href="#home" class="active">
-        Home
+      <a
+        onClick={() => {
+          history.push(`/Timeline`);
+        }}
+      >
+        <img src={home} />
       </a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
+      <a>
+        <img src={explorer} />
+      </a>
+      <a>
+        <img src={notification} />
+      </a>
+      <a>
+        <img src={message} />
+      </a>
     </div>
   );
 };

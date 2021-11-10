@@ -34,13 +34,14 @@ function App() {
               <Route exact path="/Signup" component={Signup} />
               <Route exact path="/tweet/:id" component={TweetDetails} />
             </div>
-            <BottomBar></BottomBar>
+           
           </div>
         </div>
         <div className="right-col">
           <Search></Search>
           <Trends></Trends>
         </div>
+        <BottomBar></BottomBar>
       </div>
     </>
   );
