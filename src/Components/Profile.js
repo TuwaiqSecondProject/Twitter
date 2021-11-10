@@ -33,14 +33,17 @@ function Profile() {
             );
           }
         })}
-        {state.likes[userId].map((element) => {
+        {state.likes[userId]?(
+        state.likes[userId].map((element) => {
           console.log("pass");
           return (
-            <Route exact path="/Profile/likes">
+            <Route exact path="/App/Profile/likes">
               <Likes likeId={element} />
             </Route>
           );
-        })}
+        })):("")
+      
+      }
         {state.tweets.map((element) => {
           for (let index = 0; index < state.user.length; index++) {
             console.log(
@@ -56,8 +59,10 @@ function Profile() {
             if (username[1] == element.UserId) {
               return (
                 <>
+                  <Route exact path="/App/Profile/Tweet">
+
                   {console.log(userIndex, state.user[userIndex].img)}
-                  <Route exact path="/Profile">
+
                     <Tweet
                       UserId={element.UserId}
                       Content={element.Content}

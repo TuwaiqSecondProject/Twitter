@@ -32,7 +32,7 @@ const ProfileDetails = ({ username, avatar, header }) => {
           <button
             className="pagnaing"
             onClick={(e) => {
-              history.replace(`/Profile`);
+              history.replace(`/App/Profile/Tweet`);
             }}
           >
             Tweet
@@ -40,7 +40,7 @@ const ProfileDetails = ({ username, avatar, header }) => {
           <button
             className="pagnaing"
             onClick={(e) => {
-              history.replace(`/Profile/with_replies`);
+              history.replace(`App//Profile/with_replies`);
             }}
           >
             Tweets & replies
@@ -49,7 +49,7 @@ const ProfileDetails = ({ username, avatar, header }) => {
           <button
             className="pagnaing"
             onClick={(e) => {
-              history.replace(`/Profile/likes`);
+              history.replace(`/App/Profile/likes`);
             }}
           >
             Likes

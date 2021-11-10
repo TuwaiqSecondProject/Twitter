@@ -24,17 +24,18 @@ function Login() {
     setUserPassword(newUserPassword);
   }
 
-  function Currentuser() {
-    for (let i = 0; i < state.user.length; i++) {
-      if (userName == state.user[i].username) {
-        if (userPassord == state.user[i].userPassword) {
-          const userInfo = [state.user[i].username, state.user[i].userId];
-          localStorage.setItem("currentUser", JSON.stringify(userInfo));
-          alert(" Welcome " + state.user[i].username);
-          history.push(`/Timeline`);
+  function Currentuser(){
+    for(let i=0;i<state.user.length;i++){
+      if(userName==state.user[i].username){
+        if(userPassord==state.user[i].userPassword){
+          const userInfo=[state.user[i].username,state.user[i].userId]
+          localStorage.setItem("currentUser",JSON.stringify(userInfo))
+          alert(" Welcome "+state.user[i].username)
+          history.push(`/App`)
           return;
         } else {
           alert("The password is incorrect");
+
           return;
         }
       }

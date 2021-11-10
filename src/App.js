@@ -28,11 +28,14 @@ function App() {
         <div className="mid-col">
           <div>
             <div className="timeline">
-              <Route exact path="/Timeline" component={Timeline} />
-              <Route path="/Profile" component={Profile} />
-              <Route exact path="/login" component={Login} />
+
+              <Route  path="/App/Timeline" component={Timeline} />
+              <Route path="/App/Profile" component={Profile} />
+              <Route exact path="/" component={Login} />
+
+            
               <Route exact path="/Signup" component={Signup} />
-              <Route exact path="/tweet/:id" component={TweetDetails} />
+              <Route exact path="/App/tweet/:id" component={TweetDetails} />
             </div>
           </div>
         </div>

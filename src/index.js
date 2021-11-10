@@ -11,10 +11,12 @@ import Signup from "./Components/Signup";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
+     <BrowserRouter>
+    <Provider store={store}>
+    <Route path="/App" component={App} />
+    <Login/>
+    </Provider>
+
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
