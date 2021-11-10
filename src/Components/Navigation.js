@@ -19,7 +19,7 @@ function Navigation() {
             <li>
               <a
                 onClick={() => {
-                  history.push(`/Timeline`);
+                  history.replace(`/App/Timeline`);
                 }}
               >
                 <img src={home} />
@@ -63,11 +63,7 @@ function Navigation() {
             <li>
               <a
                 onClick={() => {
-                  history.push(
-                    `/Profile/${
-                      JSON.parse(localStorage.getItem("currentUser"))[0]
-                    }`
-                  );
+                  history.replace(`/App/Profile`);
                 }}
               >
                 <img src={profile} />

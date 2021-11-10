@@ -106,7 +106,7 @@ function Tweet(UserId) {
             <div
               className="contetnt"
               onClick={(e) => {
-                history.push(`/tweet/${userid}`);
+                history.replace(`/App/tweet/${userid}`);
               }}
             >
               <p>{UserId.Content}</p>

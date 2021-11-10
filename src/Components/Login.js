@@ -32,7 +32,7 @@ function Login()
           const userInfo=[state.user[i].username,state.user[i].userId]
           localStorage.setItem("currentUser",JSON.stringify(userInfo))
           alert(" Welcome "+state.user[i].username)
-          history.push(`/Timeline`)
+          history.push(`/App`)
           return;
         }else{
           alert("The password is incorrect")
