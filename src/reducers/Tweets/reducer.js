@@ -137,9 +137,6 @@ const tweetsReducer = (state = initialState, { type, payload }) => {
           numberOfLikes: 0,
           replies: [],
         }
-        
-        console.log("in add reducer")
-        console.log(newTweet)
         const array = state.tweets.slice()
         array.unshift(newTweet)
         

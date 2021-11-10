@@ -1,9 +1,10 @@
 import { useState} from "react";
+import { useHistory } from "react-router";
 import { useSelector } from "react-redux";
 
 function Login()
 {
-
+  const history = useHistory();
   const state = useSelector((state) => {
     return {
       user: state.usersReducer.Users,
@@ -31,6 +32,7 @@ function Login()
           const userInfo=[state.user[i].username,state.user[i].userId]
           localStorage.setItem("currentUser",JSON.stringify(userInfo))
           alert(" Welcome "+state.user[i].username)
+          history.push(`/Timeline`)
           return;
         }else{
           alert("The password is incorrect")
@@ -55,6 +57,7 @@ function Login()
             <input type="password" placeholder="Enter Password" onChange={userPasswordValue} name="psw" required/>
                 
             <button type="submit" onClick={Currentuser}>Login</button>
+            
             <label>
             <input type="checkbox" checked="checked" name="remember"/> Remember me
             </label>

@@ -1,7 +1,9 @@
 import { useState} from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { useHistory } from "react-router";
+import { addUser } from "../reducers/Users/action";
 function Signup(){
-
+  const history = useHistory();
   const state = useSelector((state) => {
     console.log(state)
     return {
@@ -9,7 +11,7 @@ function Signup(){
     };
   });
 
-  
+  const dispatch = useDispatch();
   const [userName, setUserName] = useState("");
   const [userPassord, setUserPassword] = useState("");
   const [userPassord2, setUserPassword2] = useState("");
@@ -40,14 +42,21 @@ function Signup(){
       }}
       if(flag){
         if(userPassord==userPassord2){
+          
               alert("Welcome :"+userName +" you are logged in successfully ")
+              adduser([userName,userPassord]);
+              history.push(`/`)
               return;
             }else{
               alert("Passwords do not match , please try agin")
               return;
             }
       }
-
+    }
+    
+    function adduser(){
+      const action11 = addUser([userName,userPassord]);
+      dispatch(action11);
     }
 
 
