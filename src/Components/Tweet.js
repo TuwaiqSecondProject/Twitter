@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addLike } from "../reducers/likes/action";
+import { useState } from "react";
+import { useHistory } from "react-router";
 import { addNumberOfLikes } from "../reducers/Tweets/action";
 import { deletTweet } from "../reducers/Tweets/action";
 import { decreaseNumberOfLikes } from "../reducers/Tweets/action";
@@ -7,13 +9,9 @@ import avatar from "../images/avatar.jpg";
 import replay from "../images/arrow-svgrepo-com.svg";
 import likes from "../images/like-svgrepo-com.svg";
 import delet from "../images/delete-button-svgrepo-com.svg";
-import { useState} from "react";
-
-
-import { useHistory } from "react-router";
 
 function Tweet(UserId) {
-  console.log("UserId.tweetID", UserId.tweetID);
+  console.log(UserId);
   const userid = UserId.tweetID;
   const history = useHistory();
   const dispatch = useDispatch();
@@ -53,9 +51,7 @@ function Tweet(UserId) {
   if (UserId.UserId == currentUserId) {
     return (
       <>
-        <div
-          className="post-container"
-        >
+        <div className="post-container">
           <div className="post">
             <div className="header">
               <div>
@@ -65,10 +61,12 @@ function Tweet(UserId) {
                 <p>@{UserId.username}</p>
               </div>
             </div>
-            <div className="contetnt"
-            onClick={(e) => {
-              history.push(`/tweet/${userid}`);
-            }}>
+            <div
+              className="contetnt"
+              onClick={(e) => {
+                history.push(`/tweet/${userid}`);
+              }}
+            >
               <p>{UserId.Content}</p>
             </div>
             <div className="footer">
@@ -82,10 +80,9 @@ function Tweet(UserId) {
                 </button>
                 {UserId.numberOfLikes}
                 {/* <button> like</button> */}
-                <button style={{marginLeft:"220px"}} onClick={deletTweett}><img src={delet} /></button>
-                
-                
-
+                <button style={{ marginLeft: "220px" }} onClick={deletTweett}>
+                  <img src={delet} />
+                </button>
               </div>
             </div>
           </div>
@@ -95,9 +92,8 @@ function Tweet(UserId) {
   } else {
     return (
       <>
-        <div className="post-container" 
-          >
-          <div className="post" >
+        <div className="post-container">
+          <div className="post">
             <div className="header">
               <div>
                 <img src={avatar} />
@@ -106,10 +102,12 @@ function Tweet(UserId) {
                 <p>@{UserId.username}</p>
               </div>
             </div>
-            <div className="contetnt" 
-            onClick={(e) => {
-              history.push(`/tweet/${userid}`);
-            }}>
+            <div
+              className="contetnt"
+              onClick={(e) => {
+                history.push(`/tweet/${userid}`);
+              }}
+            >
               <p>{UserId.Content}</p>
             </div>
             <div className="footer">
