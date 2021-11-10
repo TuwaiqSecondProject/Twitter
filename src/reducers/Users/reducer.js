@@ -59,6 +59,21 @@ const usersReducer = (state = initialState, { type, payload }) => {
         Users: payload,
       };
 
+      case "ADD_USER":
+
+        const newUSer={
+          username:payload[0],
+          userPassword:payload[1],
+          userId:(++(state.Users[state.Users.length-1].userId)+1),
+          img: "../images/avatar8.jpg",
+          header: "../images/header7.jfif",
+        }
+        const array = state.Users.slice()
+        array.push(newUSer)
+        return {
+          Users: array,
+        };
+
     default:
       return state;
   }
