@@ -11,7 +11,7 @@ import likes from "../images/like-svgrepo-com.svg";
 import delet from "../images/delete-button-svgrepo-com.svg";
 
 function Tweet(UserId) {
-  console.log(UserId);
+  console.log(UserId.avatar);
   const userid = UserId.tweetID;
   const history = useHistory();
   const dispatch = useDispatch();
@@ -55,7 +55,7 @@ function Tweet(UserId) {
           <div className="post">
             <div className="header">
               <div>
-                <img src={avatar} />
+                <img src={UserId.avatar} />
               </div>
               <div>
                 <p>@{UserId.username}</p>
@@ -68,7 +68,6 @@ function Tweet(UserId) {
               }}
             >
               <p>{UserId.Content}</p>
-              
             </div>
             <div className="footer">
               <div>
@@ -97,7 +96,7 @@ function Tweet(UserId) {
           <div className="post">
             <div className="header">
               <div>
-                <img src={avatar} />
+                <img src={UserId.avatar} />
               </div>
               <div>
                 <p>@{UserId.username}</p>
@@ -110,8 +109,18 @@ function Tweet(UserId) {
               }}
             >
               <p>{UserId.Content}</p>
-              {UserId.tweetImg != null ?  <img src={UserId.tweetImg}/> : ""}
-             
+
+              {console.log(UserId.tweetImg)}
+              {UserId.tweetImg != null ? (
+                <div className="img-contetnt">
+                  {UserId.tweetImg.map((e) => {
+                    return <img src={e} />;
+                  })}
+                  {/* <img src={UserId.tweetImg} alt=" " /> */}
+                </div>
+              ) : (
+                ""
+              )}
             </div>
             <div className="footer">
               <div>
