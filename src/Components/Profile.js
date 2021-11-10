@@ -5,6 +5,7 @@ import { Route } from "react-router";
 import Likes from "./Likes";
 
 function Profile() {
+  let userIndex = 3;
   const currentUser = localStorage.getItem("currentUser");
   const currentUserId = JSON.parse(currentUser)[1];
   const username = JSON.parse(localStorage.getItem("currentUser"));
@@ -18,7 +19,6 @@ function Profile() {
 
   const userId = `user_${currentUserId}`;
 
-  console.log(state.likes[userId]);
   return (
     <>
       <div className="timeline">
@@ -46,10 +46,23 @@ function Profile() {
       }
         {state.tweets.map((element) => {
           for (let index = 0; index < state.user.length; index++) {
+            console.log(
+              state.user[index].userId,
+              element.UserId,
+              "index",
+              index
+            );
+
+            if (state.user[index].userId == element.UserId) {
+              userIndex = index;
+            }
             if (username[1] == element.UserId) {
               return (
                 <>
                   <Route exact path="/App/Profile/Tweet">
+
+                  {console.log(userIndex, state.user[userIndex].img)}
+
                     <Tweet
                       UserId={element.UserId}
                       Content={element.Content}
@@ -57,7 +70,7 @@ function Profile() {
                       numberOfLikes={element.numberOfLikes}
                       tweetID={element.tweetID}
                       username={username[0]}
-                      avatar={element.img}
+                      avatar={state.user[userIndex].img}
                     />
                   </Route>
                 </>

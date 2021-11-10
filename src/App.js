@@ -12,7 +12,7 @@ import BottomBar from "./Components/BottomBar";
 import { setTweets } from "./reducers/Tweets/action";
 import TweetDetails from "./Components/TweetDetails";
 import Iconsbar from "./Components/Iconsbar";
-
+import Upper from "./Components/UpperBar";
 function App() {
   return (
     <>
@@ -28,13 +28,15 @@ function App() {
         <div className="mid-col">
           <div>
             <div className="timeline">
+
               <Route  path="/App/Timeline" component={Timeline} />
               <Route path="/App/Profile" component={Profile} />
               <Route exact path="/" component={Login} />
+
+            
               <Route exact path="/Signup" component={Signup} />
               <Route exact path="/App/tweet/:id" component={TweetDetails} />
             </div>
-           
           </div>
         </div>
         <div className="right-col">

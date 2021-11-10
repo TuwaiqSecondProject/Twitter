@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Tweet from "./Tweet";
 import { addTweet } from "../reducers/Tweets/action";
 import avatar from "../images/avatar.jpg";
+import Upper from "./UpperBar";
 
 function Timeline() {
   const state = useSelector((state) => {
@@ -25,9 +26,20 @@ function Timeline() {
     const action8 = addTweet(tweetValue);
     dispatch(action8);
   }
+
+  // get avatar by localstorage id
+  const currentUser = localStorage.getItem("currentUser");
+  const currentUserId = JSON.parse(currentUser)[1];
   return (
     <>
-      <div className="timeline">
+      {state.user.map((element) => {
+        console.log(currentUserId, element.userId);
+        if (currentUserId == element.userId) {
+          return <Upper home={"Home"} avatar={element.img} />;
+        }
+      })}
+
+      <div className="timeline_with_no_border">
         <div className="post-container">
           <div className="post">
             <div className="header">
@@ -87,6 +99,7 @@ function Timeline() {
               date={element.date}
               numberOfLikes={element.numberOfLikes}
               username={state.user[userIndex].username}
+              avatar={state.user[userIndex].img}
               tweetID={element.tweetID}
               tweetImg={element.tweetImg}
             />

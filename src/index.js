@@ -7,6 +7,7 @@ import store from "./reducers/store";
 import Login from "./Components/Login";
 import reportWebVitals from "./reportWebVitals";
 import Profile from "./Components/Profile";
+import Signup from "./Components/Signup";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.render(
     <Route path="/App" component={App} />
     <Login/>
     </Provider>
+
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
