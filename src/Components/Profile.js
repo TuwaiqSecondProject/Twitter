@@ -33,14 +33,17 @@ function Profile() {
             );
           }
         })}
-        {state.likes[userId].map((element) => {
+        {state.likes[userId]?(
+        state.likes[userId].map((element) => {
           console.log("pass");
           return (
             <Route exact path="/Profile/likes">
               <Likes likeId={element} />
             </Route>
           );
-        })}
+        })):("")
+      
+      }
         {state.tweets.map((element) => {
           for (let index = 0; index < state.user.length; index++) {
             if (username[1] == element.UserId) {
