@@ -14,7 +14,8 @@ ReactDOM.render(
     <BrowserRouter>
       <Provider store={store}>
         <Route path="/App" component={App} />
-        <Route path="/login" component={Login} />
+        {/* update */}
+        <Route exact path="/" component={Login} />
         <Route path="/signup" component={Signup} />
       </Provider>
     </BrowserRouter>
