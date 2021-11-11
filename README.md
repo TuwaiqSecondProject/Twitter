@@ -12,10 +12,10 @@
 * Abilite to display all replies for any tweet
 ​
 
-##Tools:
+## Tools:
 ​
 * React 
 * Adalo and adobe xd : Desing user experince 
 * Trello: track and manage groupe tasks
-* 
+ 
 ​
