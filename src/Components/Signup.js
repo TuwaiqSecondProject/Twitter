@@ -44,7 +44,8 @@ function Signup() {
       if (userPassord == userPassord2) {
         alert("Welcome :" + userName + " you are logged in successfully ");
         adduser([userName, userPassord]);
-        history.push(`/App`);
+        // update
+        history.replace(`/`);
         return;
       } else {
         alert("Passwords do not match , please try agin");
