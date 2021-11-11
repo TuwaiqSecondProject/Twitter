@@ -1,7 +1,7 @@
 # TWITTER SIMULATION  
 ## Functionalities in the Web Application:
-Create new user 
-log in 
+.Create new user 
+*log in 
 display timeline and tweets for all users
 Write new tweet 
 display current user profile
