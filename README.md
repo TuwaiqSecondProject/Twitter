@@ -1,3 +1,3 @@
-# TWITTER SIMULIION 
+# TWITTER SIMULATION  
 
-##Functionalities in the website:
+#Functionalities in the website:
